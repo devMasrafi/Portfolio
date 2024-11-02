@@ -26,7 +26,7 @@ const NavBar = () => {
             <Link to="https://github.com/devMasrafi" target="_blank">
               <img
                 className="h-6 w-6"
-                src="./src/assets/github.png"
+                src="./assets/github.png"
                 alt="github image"
               />
             </Link>
@@ -37,14 +37,14 @@ const NavBar = () => {
             >
               <img
                 className="h-6 w-6"
-                src="./src/assets/facebook.png"
+                src="./assets/facebook.png"
                 alt="facebook image"
               />
             </Link>
 
             <img
               className="h-6 w-6"
-              src="src/assets/twitter.png"
+              src="./assets/twitter.png"
               alt="twitter image"
             />
 
@@ -54,7 +54,7 @@ const NavBar = () => {
             >
               <img
                 className="h-6 w-6"
-                src="src/assets/linkedin.png"
+                src="./assets/linkedin.png"
                 alt="linkedin image"
               />
             </Link>
