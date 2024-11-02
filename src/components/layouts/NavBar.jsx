@@ -7,16 +7,16 @@ const NavBar = () => {
       <div className=' bg-bg-main-col'> 
         <div className='container mx-auto flex justify-between items-center'>
           <div >
-            <ul className='text-white px-3 flex gap-6 font-semibold capitalize p-2 w-[426px]'>
+            <ul className='text-white flex gap-6 font-semibold capitalize py-2 w-[426px]'>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/about">About me</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/blogs">Blogs</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/projects">Projects</Link>
               </li>
