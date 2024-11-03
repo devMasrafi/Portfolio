@@ -29,7 +29,6 @@ const Projects = () => {
           <form
             onSubmit={onSubmitHandler}
             className="bg-formBg h-[30rem] w-[31rem] rounded-2xl mx-auto p-4 font-inter "
-            name="contact" method="POST" data-netlify="true"
           >
             <div>
               <div className="flex justify-between items-center ">
@@ -84,7 +83,7 @@ const Projects = () => {
             {/* btn */}
             <div className="text-center font-inter">
               <div className="py-4">
-                <button className="bg-sec-color drop-shadow-lg py-2 w-full rounded-md uppercase" type="submit"
+                <button className="bg-sec-color drop-shadow-lg py-2 w-full rounded-md uppercase"
                 >
                  send
                 </button>
