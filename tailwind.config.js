@@ -12,7 +12,8 @@ export default {
       colors: {
         'white': '#FFFFFF',
         'sec-color': "#28E98C",
-        'bg-main-col': "#1E1E1E"
+        'bg-main-col': "#1E1E1E",
+        'formBg': '#313131',
       },
     },
   },
