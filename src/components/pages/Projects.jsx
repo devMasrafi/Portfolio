@@ -1,26 +1,40 @@
 import React, { useState } from "react";
+import { db } from "../../Db/db";
+
+import { set, push, ref } from "firebase/database";
 
 const Projects = () => {
   const [inputField, setInputField] = useState({
-    fullName:"",
+    fullName: "",
     emailAdd: "",
-    subject:"",
+    subject: "",
     message: "",
-  })
+  });
 
-
-  const onchangeHandler = (e) =>{
+  const onchangeHandler = (e) => {
     setInputField({
-      ...inputField, [e.target.name]: e.target.value
+      ...inputField,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    })
-  }
-
-  const onSubmitHandler = (e) =>{
-    e.preventDefault()
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
     console.log(inputField);
-    
-  }
+
+    set(push(ref(db, "contactForumMassage/")), {
+      fullName: inputField.fullName,
+      emailAdd: inputField.emailAdd,
+      subject: inputField.subject,
+      message: inputField.message,
+    });
+    setInputField({
+      fullName: "",
+      emailAdd: "",
+      subject: "",
+      message: "",
+    });
+  };
 
   return (
     <>
@@ -33,7 +47,10 @@ const Projects = () => {
             <div>
               <div className="flex justify-between items-center ">
                 <div className="flex flex-col">
-                  <label htmlFor="fullName" className="capitalize text-sec-color ">
+                  <label
+                    htmlFor="fullName"
+                    className="capitalize text-sec-color "
+                  >
                     name
                   </label>
                   <input
@@ -45,7 +62,12 @@ const Projects = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="emailAdd" className="capitalize text-sec-color">email</label>
+                  <label
+                    htmlFor="emailAdd"
+                    className="capitalize text-sec-color"
+                  >
+                    email
+                  </label>
                   <input
                     type="email"
                     name="emailAdd"
@@ -56,7 +78,12 @@ const Projects = () => {
                 </div>
               </div>
               <div className="py-3 flex flex-col ">
-                <label htmlFor="messageSubject" className="capitalize text-sec-color">Subject</label>
+                <label
+                  htmlFor="messageSubject"
+                  className="capitalize text-sec-color"
+                >
+                  Subject
+                </label>
                 <input
                   type="text"
                   name="subject"
@@ -67,7 +94,10 @@ const Projects = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <label htmlFor="contactMessage" className="capitalize pb-2 text-sec-color ">
+                <label
+                  htmlFor="contactMessage"
+                  className="capitalize pb-2 text-sec-color "
+                >
                   message
                 </label>
                 <textarea
@@ -83,9 +113,8 @@ const Projects = () => {
             {/* btn */}
             <div className="text-center font-inter">
               <div className="py-4">
-                <button className="bg-sec-color drop-shadow-lg py-2 w-full rounded-md uppercase"
-                >
-                 send
+                <button className="bg-sec-color drop-shadow-lg py-2 w-full rounded-md uppercase">
+                  send
                 </button>
               </div>
               <button className="text-sec-color">close</button>
